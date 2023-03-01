@@ -1,6 +1,6 @@
-import { Logic } from "./logic";
+import { CELSIUS, Logic } from "./logic";
 
-export class UnitC {
+export class Unit {
     private readonly value: number;
     private readonly logic: Logic;
     private readonly baseValue: number;
@@ -11,7 +11,7 @@ export class UnitC {
         this.baseValue = logic.inOriginalState(this.value);
     }
 
-    getCelsius(shift: Logic): number {
-        return shift.inOtherState(this.baseValue);
+    getTemperature(shift: Logic): number {
+        return shift === CELSIUS ? this.baseValue : shift.inOtherState(this.baseValue);
     }
 } 

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const logic_1 = require("./classes/logic");
+const unit_1 = require("./classes/unit");
+const Celsius = new unit_1.Unit(45, logic_1.BASE);
+const resultC = Celsius.getTemperature(logic_1.FAHRENHEIT);
+console.log(`Celsius to Fahrenheit : ${resultC.toFixed(2)} F`);
+const Fahrenheit = new unit_1.Unit(113, logic_1.CELSIUS);
+const resultF = Fahrenheit.getTemperature(logic_1.CELSIUS);
+console.log(`Fahrenheit to Celsius: ${resultF.toFixed(2)} C`);
